@@ -3,13 +3,15 @@
 @tailwind utilities;
 
 :root {
-  --gold: #b8963e;
-  --gold-light: #d4af6a;
-  --gold-dark: #8a6e28;
-  --cream: #f8f4ee;
-  --cream-dark: #ede6da;
-  --charcoal: #2c2c2c;
-  --charcoal-light: #4a4a4a;
+  /* Client Requested Palette */
+  --ivory: #F7F2EA;
+  --gold: #B8924A;
+  --gold-dark: #9A7B3E; /* For hover states */
+  --ink: #1A1510;
+  
+  /* Next Level Accents */
+  --ink-muted: rgba(26, 21, 16, 0.7);
+  --ivory-dark: #ede8df;
 }
 
 @layer base {
@@ -18,21 +20,21 @@
   }
 
   body {
+    /* Use Jost for UI and Body */
     font-family: var(--font-jost), sans-serif;
-    color: var(--charcoal);
-    background: #ffffff;
+    color: var(--ink);
+    background-color: var(--ivory); /* Client's background */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
+  /* High-end Serif for Headings */
+  h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-cormorant), serif;
-    font-weight: 400;
-    letter-spacing: 0.01em;
-    line-height: 1.15;
+    font-weight: 500; /* Slightly heavier for a premium feel */
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    color: var(--ink);
   }
 }
 
@@ -42,11 +44,10 @@
   }
 
   .btn-outline {
-    @apply inline-flex items-center gap-2 border border-charcoal text-charcoal px-7 py-3.5 text-sm font-body tracking-widest uppercase transition-all duration-300 hover:bg-charcoal hover:text-white;
+    @apply inline-flex items-center justify-center gap-3 border border-[#1A1510] text-[#1A1510] px-8 py-4 text-xs font-medium tracking-[0.2em] uppercase transition-all duration-500 hover:bg-[#1A1510] hover:text-white;
   }
-
   .btn-gold {
-    @apply inline-flex items-center gap-2 bg-gold text-white px-7 py-3.5 text-sm font-body tracking-widest uppercase transition-all duration-300 hover:bg-gold-dark;
+    @apply inline-flex items-center justify-center gap-3 bg-[#B8924A] text-white px-8 py-4 text-xs font-medium tracking-[0.2em] uppercase transition-all duration-500 hover:bg-[#9A7B3E] hover:shadow-lg active:scale-95;
   }
 
   .section-title {
@@ -54,7 +55,7 @@
   }
 
   .section-subtitle {
-    @apply font-body text-sm tracking-[0.2em] uppercase text-gold mb-4;
+    @apply font-body text-xs tracking-[0.3em] uppercase text-gold mb-6 block;
   }
 
   .container-md {
@@ -64,6 +65,13 @@
   .gold-rule {
     @apply w-12 h-px bg-gold inline-block;
   }
+  .product-price {
+    @apply font-body text-lg font-light text-ink-muted;
+  }
+
+  .container-custom {
+    @apply max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20;
+  }
 }
 
 /* Scrollbar */
@@ -71,11 +79,11 @@
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--cream);
+  background: var(--ivory);
 }
 ::-webkit-scrollbar-thumb {
   background: var(--gold-light);
-  border-radius: 3px;
+  border-radius: 0px;
 }
 
 /* Auto-scroll track */
@@ -94,3 +102,6 @@
     transform: translateX(-50%);
   }
 }
+
+
+

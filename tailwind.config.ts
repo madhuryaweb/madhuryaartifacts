@@ -9,27 +9,30 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        heading: ["'Cormorant Garamond'", "serif"],
-        body: ["'Jost'", "sans-serif"],
+        // Linked to your CSS variables for Cormorant Garamond & Jost
+        heading: ["var(--font-cormorant)", "serif"],
+        body: ["var(--font-jost)", "sans-serif"],
       },
       colors: {
+        // Client specific: Ivory, Gold, and Ink
+        ivory: {
+          DEFAULT: "#F7F2EA",
+          dark: "#EDE8DF",
+        },
         gold: {
-          DEFAULT: "#B8963E",
+          DEFAULT: "#B8924A",
           light: "#D4AF6A",
-          dark: "#8A6E28",
+          dark: "#9A7B3E",
         },
-        cream: {
-          DEFAULT: "#F8F4EE",
-          dark: "#EDE6DA",
-        },
-        charcoal: {
-          DEFAULT: "#2C2C2C",
-          light: "#4A4A4A",
+        ink: {
+          DEFAULT: "#1A1510",
+          muted: "rgba(26, 21, 16, 0.7)",
         },
       },
       animation: {
-        "scroll-left": "scrollLeft 30s linear infinite",
-        "fade-up": "fadeUp 0.7s ease forwards",
+        "scroll-left": "scrollLeft 35s linear infinite",
+        "fade-up": "fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "slow-zoom": "slowZoom 20s ease-in-out infinite alternate",
       },
       keyframes: {
         scrollLeft: {
@@ -37,8 +40,12 @@ const config: Config = {
           "100%": { transform: "translateX(-50%)" },
         },
         fadeUp: {
-          from: { opacity: "0", transform: "translateY(24px)" },
+          from: { opacity: "0", transform: "translateY(30px)" },
           to: { opacity: "1", transform: "translateY(0)" },
+        },
+        slowZoom: {
+          "0%": { transform: "scale(1)" },
+          "100%": { transform: "scale(1.1)" },
         },
       },
     },
