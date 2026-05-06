@@ -135,7 +135,7 @@ export default function HeroSection() {
             </Link>
 <a
             
-              href="https://wa.me/919425057991"
+              href="https://wa.me/9425057991"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2
