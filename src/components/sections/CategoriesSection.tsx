@@ -6,14 +6,14 @@ import { ArrowRight } from "lucide-react";
 export default function CategoriesSection() {
   return (
     <section className="py-16 bg-cream overflow-hidden">
-      <div className="container-md mb-10">
+      <div className="container-md  md:mb-10">
         <div className="flex items-end justify-between px-4">
           <div>
             <p className="section-subtitle">Collections</p>
-            <h2 className="section-title">
+            {/* <h2 className="section-title">
               Shop by
               <span className="italic text-gold"> Category</span>
-            </h2>
+            </h2> */}
           </div>
           <Link
             href="/products"
@@ -26,7 +26,7 @@ export default function CategoriesSection() {
 
       {/* Horizontal scroll */}
       <div className="pl-4 sm:pl-8 lg:pl-[calc((100vw-72rem)/2+2rem)]">
-        <div className="flex gap-8 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory">
+        <div className="flex gap-8 overflow-x-auto pb-4 custom-scrollbar  snap-x snap-mandatory">
           {categories.map((cat) => (
             <Link
               key={cat.id}
@@ -54,14 +54,14 @@ export default function CategoriesSection() {
       </div>
 
       {/* Mobile View All Link */}
-      <div className="container-md mt-8 md:hidden px-4">
-        <Link
-          href="/products"
-          className="flex items-center gap-2 font-body text-xs tracking-widest uppercase text-charcoal-light hover:text-gold transition-colors"
-        >
-          View All Collections <ArrowRight size={14} />
-        </Link>
-      </div>
+      <div className="container-md mt-8 md:hidden px-4 border-b border-gray-300 pb-4">
+  <Link
+    href="/products"
+    className="flex items-center gap-2 font-body text-xs tracking-widest uppercase text-charcoal-light hover:text-gold transition-colors"
+  >
+    View All Collections <ArrowRight size={14} />
+  </Link>
+</div>
     </section>
   );
 }

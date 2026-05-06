@@ -5,7 +5,7 @@ import { blogs } from "@/data/data";
 
 export default function BlogPreview() {
   return (
-    <section className="py-20 bg-white">
+    <section className="hidden md:block relative py-28 md:py-36 bg-white">
       <div className="container-md">
         <div className="flex items-end justify-between mb-12">
           <div>
@@ -26,18 +26,20 @@ export default function BlogPreview() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {blogs.map((blog) => (
             <Link key={blog.id} href={`/blog/${blog.slug}`} className="group">
-              <div className="relative h-56 overflow-hidden bg-cream mb-5">
-                <Image
-                  src={blog.image}
-                  alt={blog.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                {/* Tag */}
-                <span className="absolute top-3 left-3 bg-white font-body text-[10px] tracking-[0.15em] uppercase px-2.5 py-1 text-gold">
-                  {blog.tags[0]}
-                </span>
+
+              <div className="mb-5 overflow-hidden">
+                <div className="relative h-56 bg-cream">
+                  <Image
+                    src={blog.image}
+                    alt={blog.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <span className="absolute top-3 left-3 bg-white font-body text-[10px] tracking-[0.15em] uppercase px-2.5 py-1 text-gold">
+                    {blog.tags[0]}
+                  </span>
+                </div>
               </div>
 
               <div className="flex items-center gap-3 mb-3">
@@ -54,17 +56,8 @@ export default function BlogPreview() {
               <h3 className="font-heading text-xl text-charcoal leading-snug group-hover:text-gold transition-colors mb-2">
                 {blog.title}
               </h3>
-              {/* <p className="font-body text-sm text-charcoal-light leading-relaxed line-clamp-2">
-                {blog.excerpt}
-              </p> */}
             </Link>
           ))}
-        </div>
-
-        <div className="mt-10 md:hidden">
-          <Link href="/blog" className="btn-outline">
-            All Articles <ArrowRight size={14} />
-          </Link>
         </div>
       </div>
     </section>

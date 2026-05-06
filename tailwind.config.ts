@@ -13,22 +13,21 @@ const config: Config = {
         heading: ["var(--font-cormorant)", "serif"],
         body: ["var(--font-jost)", "sans-serif"],
       },
-      colors: {
-        // Client specific: Ivory, Gold, and Ink
-        ivory: {
-          DEFAULT: "#F7F2EA",
-          dark: "#EDE8DF",
-        },
-        gold: {
-          DEFAULT: "#B8924A",
-          light: "#D4AF6A",
-          dark: "#9A7B3E",
-        },
-        ink: {
-          DEFAULT: "#1A1510",
-          muted: "rgba(26, 21, 16, 0.7)",
-        },
-      },
+    colors: {
+  gold: {
+    DEFAULT: "#B8924A",
+    light: "#D4AF6A",
+    dark: "#8A6E28",
+  },
+  cream: {
+    DEFAULT: "#F7F2EA",   // ← Ivory
+    dark: "#EDE6DA",
+  },
+  charcoal: {
+    DEFAULT: "#1A1510",   // ← Ink
+    light: "#4A4A4A",
+  },
+},
       animation: {
         "scroll-left": "scrollLeft 35s linear infinite",
         "fade-up": "fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards",

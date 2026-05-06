@@ -32,15 +32,15 @@ export type Category = {
 
 export const categories: Category[] = [
   {
-    id: "wall-paintings",
-    name: "Wall Paintings",
+    id: "Painting",
+    name: "Painting",
     image:
       "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=600&q=80",
     description: "Hand-painted canvases that become conversation pieces",
     count: 12,
   },
   {
-    id: "clocks",
+    id: "Clocks",
     name: "Clocks",
     image:
       "https://images.unsplash.com/photo-1563861826100-9cb868fdbe1c?w=600&q=80",
@@ -48,23 +48,23 @@ export const categories: Category[] = [
     count: 8,
   },
   {
-    id: "lamps",
-    name: "Lamps & Lighting",
+    id: "Artifacts",
+    name: "Artifacts & Décor",
     image:
       "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=600&q=80",
     description: "Ambient lighting that sets the perfect mood",
     count: 10,
   },
   {
-    id: "decor-items",
-    name: "Décor Items",
+    id: "Rugs",
+    name: "Rugs & Textiles",
     image:
       "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80",
     description: "Curated accent pieces for every corner",
     count: 15,
   },
   {
-    id: "vases",
+    id: "Vases",
     name: "Vases & Planters",
     image:
       "https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=600&q=80",
@@ -72,8 +72,8 @@ export const categories: Category[] = [
     count: 7,
   },
   {
-    id: "textiles",
-    name: "Textiles",
+    id: "Artificial Planter",
+    name: "Artificial Planter",
     image:
       "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=600&q=80",
     description: "Luxe cushions, throws, and woven accents",
@@ -81,6 +81,38 @@ export const categories: Category[] = [
   },
 ];
 
+export const featuredProducts = [
+  {
+    id: "f1",
+    name: "Luxury Wall Frame",
+    image: "/images/p1.png",
+  },
+  {
+    id: "f2",
+    name: "Modern Lamp",
+    image: "/images/c1.png",
+  },
+  {
+    id: "f3",
+    name: "Classic Watch",
+    image: "/images/a1.png",
+  },
+  {
+    id: "f4",
+    name: "Decor Statue",
+    image: "/images/img1.jpeg",
+  },
+  {
+    id: "f5",
+    name: "Premium Painting",
+    image: "/images/p3.png",
+  },
+  {
+    id: "f6",
+    name: "Designer Vase",
+    image: "/images/v1.png",
+  },
+];
 export type Product = {
   id: number;
   name: string;
@@ -95,50 +127,50 @@ export const products: Product[] = [
   {
     id: 1,
     name: "Golden Horizon Canvas",
-    category: "wall-paintings",
+    category: "Painting",
     image:
-      "https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?w=600&q=80",
+      "/images/p1.png",
     tag: "Bestseller",
     material: "Acrylic on Canvas",
   },
   {
     id: 2,
     name: "Forest Whisper Triptych",
-    category: "wall-paintings",
+    category: "Painting",
     image:
-      "https://images.unsplash.com/photo-1549490349-8643362247b5?w=600&q=80",
+       "/images/p2.png",
     tag: "New",
     material: "Oil on Canvas",
   },
   {
     id: 3,
     name: "Abstract Terracotta Series",
-    category: "wall-paintings",
+    category: "Painting",
     image:
-      "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&q=80",
+       "/images/p3.png",
     material: "Mixed Media",
   },
   {
     id: 4,
     name: "Moonlit Botanicals",
-    category: "wall-paintings",
+    category: "Painting",
     image:
-      "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=600&q=80",
+       "/images/p4.png",
     tag: "Limited",
     material: "Watercolour on Paper",
   },
   {
     id: 5,
     name: "Marble Wash Study",
-    category: "wall-paintings",
+    category: "Painting",
     image:
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80",
+       "/images/p5.png",
     material: "Acrylic on Canvas",
   },
   {
     id: 6,
     name: "Desert Dunes Panorama",
-    category: "wall-paintings",
+    category: "Painting",
     image:
       "https://images.unsplash.com/photo-1534430480872-3498386e7856?w=600&q=80",
     tag: "New",
@@ -186,35 +218,35 @@ export const products: Product[] = [
   {
     id: 11,
     name: "Rattan Pendant Lamp",
-    category: "lamps",
+    category: "Artifacts",
     image:
-      "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=600&q=80",
+      "/images/a1.png",
     tag: "Bestseller",
     material: "Natural Rattan",
   },
   {
     id: 12,
     name: "Brass Arc Floor Lamp",
-    category: "lamps",
+    category: "Artifacts",
     image:
-      "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80",
+      "/images/a2.png",
     tag: "New",
     material: "Brushed Brass & Marble",
   },
   {
     id: 13,
     name: "Terracotta Table Lamp",
-    category: "lamps",
+    category: "Artifacts",
     image:
-      "https://images.unsplash.com/photo-1621177555630-b861919c864f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8bGFtcHxlbnwwfHwwfHx8MA%3D%3D",
+      "/images/v4.png",
     material: "Hand-thrown Terracotta",
   },
   {
     id: 14,
     name: "Bamboo Lantern Set",
-    category: "lamps",
+    category: "Artifacts",
     image:
-      "https://images.unsplash.com/photo-1518051870910-a46e30d9db16?w=600&q=80",
+      "/images/a4.png",
     tag: "Limited",
     material: "Handwoven Bamboo",
   },
@@ -277,26 +309,26 @@ export const products: Product[] = [
   {
     id: 21,
     name: "Matte Black Stoneware Vase",
-    category: "vases",
+    category: "Vases",
     image:
-      "https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=600&q=80",
+      "/images/v1.png",
     tag: "Bestseller",
     material: "Stoneware",
   },
   {
     id: 22,
     name: "Speckled Cream Planter",
-    category: "vases",
+    category: "Vases",
     image:
-      "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&q=80",
+      "/images/v2.png",
     material: "Hand-thrown Ceramic",
   },
   {
     id: 23,
     name: "Ribbed Terracotta Trio",
-    category: "vases",
+    category: "Vases",
     image:
-      "https://images.unsplash.com/photo-1533038590840-1cde6e668a91?w=600&q=80",
+      "/images/v3.png",
     tag: "New",
     material: "Terracotta",
   },

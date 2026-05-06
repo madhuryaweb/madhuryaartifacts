@@ -15,17 +15,35 @@ export default function AboutPreview() {
       <div className="container-md">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Image side */}
+          {/* Media side */}
           <div className="relative">
-            <div className="relative h-[500px] overflow-hidden">
+            {/* Mobile — Image */}
+            <div className="relative h-[500px] overflow-hidden block lg:hidden">
               <Image
                 src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=800&q=80"
                 alt="Madhurya artisan crafting home decor"
                 fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
+                sizes="100vw"
                 className="object-cover"
               />
             </div>
-            {/* Stats card overlay */}
+
+            {/* Desktop — Video */}
+            <div className="relative h-[600px] overflow-hidden hidden lg:block">
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                
+                className="w-full h-full object-cover"
+              >
+                <source src="/video/hero.mp4" type="video/mp4" />
+              </video>
+            </div>
+
+            {/* Stats card — dono pe same */}
             <div className="absolute -bottom-6 -right-4 sm:right-8 bg-white p-6 shadow-xl grid grid-cols-2 gap-5 w-64">
               {stats.map((s) => (
                 <div key={s.label} className="text-center">
@@ -63,11 +81,12 @@ export default function AboutPreview() {
             {/* Quote */}
             <blockquote className="border-l-2 border-gold pl-5 mb-10">
               <p className="font-heading text-2xl text-charcoal italic leading-snug">
-                "We don't just sell décor. We help you build a home with a soul."
+                "We don't just sell décor. We help you build a home with a
+                soul."
               </p>
             </blockquote>
 
-            <Link href="/about" className="btn-primary">
+            <Link href="/about" className="btn-primary flex gap-3">
               Our Full Story
               <ArrowRight size={16} />
             </Link>

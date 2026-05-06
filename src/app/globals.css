@@ -3,15 +3,13 @@
 @tailwind utilities;
 
 :root {
-  /* Client Requested Palette */
-  --ivory: #F7F2EA;
   --gold: #B8924A;
-  --gold-dark: #9A7B3E; /* For hover states */
-  --ink: #1A1510;
-  
-  /* Next Level Accents */
-  --ink-muted: rgba(26, 21, 16, 0.7);
-  --ivory-dark: #ede8df;
+  --gold-light: #D4AF6A;
+  --gold-dark: #8A6E28;
+  --cream: #F7F2EA;        /* ← Ivory */
+  --cream-dark: #EDE6DA;
+  --charcoal: #1A1510;     /* ← Ink */
+  --charcoal-light: #4A4A4A;
 }
 
 @layer base {
@@ -39,9 +37,7 @@
 }
 
 @layer components {
-  .btn-primary {
-    @apply inline-flex items-center gap-2 bg-charcoal text-white px-7 py-3.5 text-sm font-body tracking-widest uppercase transition-all duration-300 hover:bg-gold hover:text-white;
-  }
+ 
 
   .btn-outline {
     @apply inline-flex items-center justify-center gap-3 border border-[#1A1510] text-[#1A1510] px-8 py-4 text-xs font-medium tracking-[0.2em] uppercase transition-all duration-500 hover:bg-[#1A1510] hover:text-white;
@@ -50,10 +46,7 @@
     @apply inline-flex items-center justify-center gap-3 bg-[#B8924A] text-white px-8 py-4 text-xs font-medium tracking-[0.2em] uppercase transition-all duration-500 hover:bg-[#9A7B3E] hover:shadow-lg active:scale-95;
   }
 
-  .section-title {
-    @apply font-heading text-4xl md:text-5xl text-charcoal;
-  }
-
+ 
   .section-subtitle {
     @apply font-body text-xs tracking-[0.3em] uppercase text-gold mb-6 block;
   }
@@ -86,6 +79,41 @@
   border-radius: 0px;
 }
 
+/* Thin & rounded horizontal scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  height: 2px;
+  width: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #a1a1aa;
+  border-radius: 9999px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: #71717a;
+}
+
+/* Hide scrollbar (all browsers) */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE & Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari */
+}
+
+/* Firefox support */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #a1a1aa transparent;
+}
+
 /* Auto-scroll track */
 .scroll-track {
   animation: scrollLeft 35s linear infinite;
@@ -105,3 +133,15 @@
 
 
 
+.reveal-img {
+  @apply overflow-hidden transition-all duration-700;
+}
+.reveal-img img {
+  @apply transition-transform duration-1000 ease-out hover:scale-105;
+}
+
+/* Elegant Text Selection */
+::selection {
+  background: var(--gold);
+  color: white;
+}
