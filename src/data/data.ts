@@ -8,15 +8,15 @@ export const siteConfig = {
   tagline: "Where Craft Meets Home",
   description:
     "Premium handcrafted home décor — wall art, clocks, lamps, and bespoke pieces that transform living spaces.",
-  phone: "+91 9098448492",
-  whatsapp: "919098448492",
+  phone: "+919425057991",
+  whatsapp: "919425057991",
   email: "hello@madhurya.in",
   address: "1, Agra - Mumbai Hwy, Bicholi Hapsi, Indore, Madhya Pradesh – 452016",
   mapEmbed:
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3330.715665711702!2d75.92799127476103!3d22.707394828017478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fd22c3cd5683%3A0x9641f0b0f483b7f7!2sMadhurya%20Handicrafts%20%26%20Artifacts%20Store!5e1!3m2!1sen!2sin!4v1777178068030!5m2!1sen!2sin",
   social: {
     instagram: "https://www.instagram.com/madhuryaartifacts/",
-    whatsapp: "https://wa.me/919098448492",
+    whatsapp: "https://wa.me/919425057991",
     facebook: "https://facebook.com/madhurya",
     pinterest: "https://pinterest.com/madhurya",
   },
