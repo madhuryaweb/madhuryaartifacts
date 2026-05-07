@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Instagram, Facebook, MapPin, Phone, Mail } from "lucide-react";
 import { siteConfig, categories } from "@/data/data";
+import Image from "next/image";
 
 const pageLinks = [
   { label: "Blog", href: "/blog" },
@@ -24,7 +25,7 @@ export default function Footer() {
           {/* 1. Brand */}
           <div className="md:col-span-2 lg:col-span-1">
             {/* Logo */}
-            <div className="flex items-center gap-3 mb-5">
+            {/* <div className="flex items-center gap-3 mb-5">
               <div className="w-9 h-9 border border-gold flex items-center justify-center">
                 <span className="font-heading text-gold text-xl leading-none">M</span>
               </div>
@@ -36,7 +37,18 @@ export default function Footer() {
                   Where Craft Meets Home
                 </p>
               </div>
+            </div> */}
+             <Link href="/" className="flex items-center overflow-hidden">
+            <div className="relative h-10 md:h-16 w-32 md:w-44 flex items-center justify-center">
+              <Image
+                src="/images/logo4.png"
+                alt="Madhurya Logo"
+                fill
+                className="object-contain " // 'scale' se logo bada hoga bina box bada kiye
+                priority
+              />
             </div>
+          </Link>
 
             <p className="font-body text-sm text-white/50 leading-relaxed mb-6 max-w-xs">
               Premium handcrafted home décor, thoughtfully made and delivered

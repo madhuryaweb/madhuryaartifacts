@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Menu, X, ChevronDown, MessageCircle } from "lucide-react";
 import { categories } from "@/data/data";
@@ -46,7 +47,7 @@ export default function Navbar() {
       <div className="container-md">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3 group">
+          {/* <Link href="/" className="flex items-center gap-3 group">
             <div className="w-8 h-8 border border-gold flex items-center justify-center">
               <span className="font-heading text-gold text-lg leading-none">M</span>
             </div>
@@ -57,6 +58,18 @@ export default function Navbar() {
               <p className="font-body text-[9px] tracking-[0.25em] text-gold uppercase leading-none mt-0.5">
                 Where Craft Meets Home
               </p>
+            </div>
+          </Link> */}
+          {/* Logo Section - Replaced text with Image */}
+          <Link href="/" className="flex items-center overflow-hidden">
+            <div className="relative h-10 md:h-16 w-32 md:w-44 flex items-center justify-center">
+              <Image
+                src="/images/logo4.png"
+                alt="Madhurya Logo"
+                fill
+                className="object-contain " // 'scale' se logo bada hoga bina box bada kiye
+                priority
+              />
             </div>
           </Link>
 
