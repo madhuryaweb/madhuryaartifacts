@@ -63,7 +63,7 @@ export default function HeroSection() {
       {/* ── DESKTOP: Static image background ── */}
       <div className="absolute inset-0 hidden lg:block">
         <Image
-          src="/images/img-5.jpeg"
+          src="/images/img-5.webp"
           alt="Madhurya luxury home decor"
           fill
           priority
