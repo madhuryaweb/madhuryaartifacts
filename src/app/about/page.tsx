@@ -1,163 +1,149 @@
-import type { Metadata } from "next";
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, CheckCircle } from "lucide-react";
-
-export const metadata: Metadata = {
-  title: "About Madhurya | Our Story & Craft Philosophy",
-  description:
-    "Learn about Madhurya — our journey, our artisans, and our commitment to bringing premium handcrafted home décor to Indian homes.",
-};
+import { ArrowRight, CheckCircle, MapPin, Sparkles, PencilRuler, ShieldCheck } from "lucide-react";
 
 const values = [
-  { title: "Artisan-First", desc: "Every piece is made by skilled craftspeople paid fairly for their expertise." },
-  { title: "No Mass Production", desc: "Limited runs only — ensuring each piece remains special and unique." },
-  { title: "Sustainable Materials", desc: "Natural, responsibly sourced materials that age beautifully." },
-  { title: "Honest Quality", desc: "We stand behind every piece. If it isn't exceptional, it doesn't ship." },
-];
-
-const timeline = [
-  { year: "2019", event: "Madhurya founded in Indore with 6 artisan partners" },
-  { year: "2020", event: "First 100 homes furnished — all through word of mouth" },
-  { year: "2021", event: "Launched Wall Paintings & Clocks collections" },
-  { year: "2022", event: "Expanded to 500+ products across 6 categories" },
-  { year: "2023", event: "Interior Styling service launched" },
-  { year: "2024", event: "Serving customers across 50+ Indian cities" },
+  { 
+    icon: Sparkles,
+    title: "Curated Selection", 
+    desc: "A handpicked range of artifacts and décor pieces that make every space stand out." 
+  },
+  { 
+    icon: PencilRuler,
+    title: "Tailored Design", 
+    desc: "Customised statement designs for those who seek something unique, not just mass-produced." 
+  },
+  { 
+    icon: MapPin,
+    title: "10,000 Sq. Ft. Inspiration", 
+    desc: "Our massive showroom in Indore is a design-led destination for pure interior inspiration." 
+  },
+  { 
+    icon: ShieldCheck,
+    title: "Trusted Expertise", 
+    desc: "15+ years of experience and 1000+ completed projects across Madhya Pradesh." 
+  },
 ];
 
 export default function AboutPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="pt-32 pb-20 bg-cream">
+      {/* Hero - Using the new Dark Brown tone from the logo */}
+      <section className=" pt-20 md:pt-32 md:pb-24 bg-m-brown ">
         <div className="container-md">
-          <div className="max-w-2xl">
-            <p className="section-subtitle">Who We Are</p>
-            <h1 className="section-title mb-6">
-              More Than Décor —<br />
-              <span className="italic text-gold">A Living Philosophy</span>
+          <div className="max-w-3xl">
+            <p className="section-subtitle text-m-orange uppercase tracking-widest">Our Legacy</p>
+            <h1 className="section-title mb-8 text-">
+              Every space should stand out,<br />
+              <span className="italic font-script text-m-brown/80  text-6xl md:text-8xl">Not just fit.</span>
             </h1>
-            <p className="font-body text-lg text-charcoal-light leading-relaxed">
-              Madhurya was built on one conviction: that the objects in your home shape
-              the way you feel every single day. We exist to make that feeling extraordinary.
+            <p className="font-body text-lg text-m-brown/20  leading-relaxed max-w-2xl">
+              Over the past 15 years, Madhurya has evolved from a modest retail space into a 10,000 sq. ft. 
+              design-led destination for curated and customised home décor in Indore.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Story */}
-      <section className="py-20 bg-white">
+      {/* Story - Clean Ivory Background with Dark Brown Text */}
+      <section className=" py-10 md:py-24 bg-m-cream">
         <div className="container-md grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="relative h-[520px]">
+          <div className="relative h-[300px] md:h-[600px] rounded-2xl overflow-hidden shadow-2xl border border-gray-200">
             <Image
-              src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=800&q=80"
-              alt="Madhurya artisan workshop"
+              src="/images/img-5.webp"
+              alt="Madhurya Indore Showroom"
               fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 50vw"
             />
-            <div className="absolute -bottom-4 -right-4 w-36 h-36 bg-gold/10 border border-gold/30" />
           </div>
 
-          <div>
-            <p className="section-subtitle">The Beginning</p>
-            <h2 className="section-title mb-6">
-              Born in Indore,<br />
-              <span className="italic text-gold">Built for Every Home</span>
-            </h2>
-            <div className="space-y-5 font-body text-charcoal-light text-base leading-relaxed">
+          <div className="space-y-8">
+            <div>
+              <p className="section-subtitle text-m-orange">The Journey</p>
+              <h2 className="text-4xl md:text-5xl font-serif text-m-brown leading-tight">
+                15 Years of <br />
+                <span className="italic">Interior Inspiration</span>
+              </h2>
+            </div>
+            
+            <div className="space-y-6 font-body text-m-brown/80 text-lg leading-relaxed">
               <p>
-                It began in a small workshop in Indore in 2019, where our founder —
-                frustrated by the sameness of mass-produced décor — started working
-                directly with local artisans to create something genuinely different.
+                Our journey is rooted in a simple idea: your home is a reflection of your soul. 
+                What started as a modest dream has now grown into Indore&apos;s trusted destination 
+                for premium artifacts and end-to-end styling solutions.
               </p>
               <p>
-                The first pieces were shared with friends. Then those friends told others.
-                Within a year, Madhurya had furnished over 100 homes — every single
-                customer arriving through word of mouth.
+                With more than <strong>1000 projects completed</strong> across Madhya Pradesh, 
+                we have built a reputation for detail and quality. We collaborate strongly with 
+                architects and designers to bring unforgettable experiences to life.
               </p>
               <p>
-                Today we work with over 30 artisan families across Madhya Pradesh and
-                Rajasthan, preserving craft traditions while creating pieces built for
-                contemporary Indian living.
+                From residential statement designs to commercial styling, our 10,000 sq. ft. space 
+                is dedicated to helping you find pieces that truly stand out.
               </p>
+            </div>
+
+            {/* Achievement Stats */}
+            <div className="grid grid-cols-2 gap-8 pt-6 border-t border-m-brown/10">
+              <div>
+                <p className="text-4xl font-serif text-m-orange">1000+</p>
+                <p className="text-xs uppercase tracking-widest text-m-brown font-bold mt-1">Projects Completed</p>
+              </div>
+              <div>
+                <p className="text-4xl font-serif text-m-orange">10k</p>
+                <p className="text-xs uppercase tracking-widest text-m-brown font-bold mt-1">Sq. Ft. Showroom</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Values */}
-      <section className="py-20 bg-cream">
+      {/* Values - Using Orange only for Icons as per instructions */}
+      <section className=" py-10 md:py-24 bg-white">
         <div className="container-md">
-          <div className="text-center mb-14">
-            <p className="section-subtitle">Why Madhurya</p>
-            <h2 className="section-title">Our <span className="italic text-gold">Commitments</span></h2>
+          <div className="text-center mb-16">
+            <p className="section-subtitle text-m-brown">The Madhurya Way</p>
+            <h2 className="text-3xl md:text-4xl font-serif text-m-brown">Our <span className="italic font-script text-m-orange">Commitments</span></h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((v) => (
-              <div key={v.title} className="bg-white p-7 border border-cream-dark">
-                <CheckCircle size={22} className="text-gold mb-4" />
-                <h3 className="font-heading text-xl text-charcoal mb-2">{v.title}</h3>
-                <p className="font-body text-sm text-charcoal-light leading-relaxed">{v.desc}</p>
+              <div key={v.title} className="p-8 rounded-xl border border-m-cream-dark hover:shadow-xl transition-all duration-500 group">
+                <v.icon size={32} className="text-m-orange mb-2 md:mb-6 group-hover:scale-110 transition-transform" />
+                <h3 className="font-heading text-xl text-m-brown mb-3 tracking-wide">{v.title}</h3>
+                <p className="font-body text-sm text-m-brown/70 leading-relaxed">{v.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Timeline */}
-      <section className="py-20 bg-white">
-        <div className="container-md">
-          <div className="max-w-xl mb-14">
-            <p className="section-subtitle">Our Journey</p>
-            <h2 className="section-title">Five Years of <span className="italic text-gold">Craft</span></h2>
-          </div>
-          <div className="space-y-0 max-w-2xl">
-            {timeline.map((item, idx) => (
-              <div key={item.year} className="flex items-start gap-8 pb-10 relative">
-                {idx < timeline.length - 1 && (
-                  <div className="absolute left-7 top-14 w-px h-full bg-cream-dark" />
-                )}
-                <div className="shrink-0 w-14 h-14 bg-gold/10 border border-gold/30 flex items-center justify-center">
-                  <span className="font-heading text-gold text-sm leading-tight text-center">{item.year}</span>
-                </div>
-                <div className="pt-4">
-                  <p className="font-body text-base text-charcoal-light">{item.event}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-20 bg-charcoal text-white">
-        <div className="container-md grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
-          <div>
-            <p className="section-subtitle text-gold">Work With Us</p>
-            <h2 className="font-heading text-4xl md:text-5xl text-white mb-6">
-              Are You an Artisan<br />
-              <span className="italic text-gold-light">or Interior Pro?</span>
+      {/* Collaboration CTA - Dark Background to match Logo tone */}
+      <section className="py-5 md:py-24 bg-m-brown text-m-brown/80 ">
+        <div className="container-md flex flex-col lg:flex-row gap-16 items-center">
+          <div className="flex-1">
+            <p className="section-subtitle text-m-orange">Collaborations</p>
+            <h2 className="font-heading text-3xl md:text-5xl text-m-brown/80  mb-8">
+              Architects, Designers & <br />
+              <span className="italic font-script text-m-orange text-3xl md:text-5xl">Styling Professionals</span>
             </h2>
-            <p className="font-body text-white/70 leading-relaxed mb-8">
-              We're always looking to collaborate with talented craftspeople, designers,
-              and home stylists who share our passion for quality.
+            <p className="font-body text-m-brown/80 text-lg leading-relaxed mb-10 max-w-xl">
+              We offer bespoke collaborations and end-to-end styling solutions for both 
+              residential and commercial projects. Let&apos;s build something unforgettable together.
             </p>
             <div className="flex gap-4 flex-wrap">
-              <Link href="/partner" className="btn-gold">
-                Partner With Us <ArrowRight size={16} />
-              </Link>
-              <Link href="/contact" className="btn-outline border-white text-white hover:bg-white hover:text-charcoal">
-                Get In Touch
+              <Link href="/contact" className="bg-white hover:bg-black hover:text-white text-m-brown/80  px-10 py-4 rounded-full transition-all duration-300 font-bold tracking-widest text-xs flex items-center gap-2">
+                WORK WITH US <ArrowRight size={16} />
               </Link>
             </div>
           </div>
-          <div className="relative h-80 lg:h-[440px]">
+          <div className="flex-1 relative w-full h-[400px] rounded-2xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000">
             <Image
-              src="https://images.unsplash.com/photo-1565183997392-2f6f122e5912?w=800&q=80"
-              alt="Madhurya artisan collaboration"
+              src="/images/hero.webp" 
+              alt="Interior design collaboration"
               fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
             />
           </div>

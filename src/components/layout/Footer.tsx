@@ -44,15 +44,14 @@ export default function Footer() {
                 src="/images/logo4.png"
                 alt="Madhurya Logo"
                 fill
-                className="object-contain " // 'scale' se logo bada hoga bina box bada kiye
+                className="object-contain " 
                 priority
               />
             </div>
           </Link>
 
             <p className="font-body text-sm text-white/50 leading-relaxed mb-6 max-w-xs">
-              Premium handcrafted home décor, thoughtfully made and delivered
-              across India.
+           Premium  home décor thoughtfully curated and delivered across India.
             </p>
 
             {/* Social icons */}
@@ -178,14 +177,30 @@ export default function Footer() {
       </div>
 
       {/* ── Bottom bar ── */}
-      <div className="container-md py-5 flex flex-col sm:flex-row items-center justify-between gap-2">
-        <p className="font-body text-xs text-white/25">
-          © {new Date().getFullYear()} Madhurya. All rights reserved.
-        </p>
-        <p className="font-body text-xs text-white/25">
-          Handcrafted with care in Indore, India 🇮🇳
-        </p>
-      </div>
+     <div className="container-md py-8 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-white/5">
+  {/* Copyright Section */}
+  <p className="font-body text-[10px] tracking-widest uppercase text-white/40">
+    © {new Date().getFullYear()} Madhurya Pieces. All rights reserved.
+  </p>
+
+  {/* Clickable Location Section */}
+  <a 
+    href="https://maps.app.goo.gl/aFsPdxAk5JaWxu2i7" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="group flex items-center gap-2"
+  >
+    <p className="font-body text-[10px] tracking-widest uppercase text-white/40 group-hover:text-m-orange transition-colors duration-300">
+     Curated with care in
+      <span className="text-white/60 group-hover:text-m-orange ml-1 border-b border-white/10 group-hover:border-m-orange transition-all">
+        Indore, India 
+      </span>
+    </p>
+    
+    {/* Chota sa Map Icon jo sirf hover par highlight hoga */}
+   
+  </a>
+</div>
 
     </footer>
   );

@@ -3,13 +3,21 @@
 @tailwind utilities;
 
 :root {
+  /* Logo se Inspired Primary Colors */
+  --m-brown: #1A110B;       /* ← Logo Background (Dark Coffee/Brown) */
+  --m-orange: #D8843B;      /* ← Logo Script Orange (Highlight color) */
+  
+  /* Luxury Gold Tones (Jo pehle se hain unhe refine kiya) */
   --gold: #B8924A;
   --gold-light: #D4AF6A;
-  --gold-dark: #8A6E28;
-  --cream: #F7F2EA;        /* ← Ivory */
-  --cream-dark: #EDE6DA;
-  --charcoal: #1A1510;     /* ← Ink */
-  --charcoal-light: #4A4A4A;
+  
+  /* Page Body Tones (Client wants it light/ivory) */
+  --cream: #FAF7F2;         /* ← Pehle se thoda aur light (As requested) */
+  --cream-dark: #F2EBE1;
+  
+  /* Text Colors */
+  --ink: #1A1510;           /* ← General text ke liye */
+  --ink-light: #5C5C5C;
 }
 
 @layer base {

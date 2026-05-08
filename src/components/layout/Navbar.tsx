@@ -40,8 +40,8 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-white/95 backdrop-blur-sm shadow-[0_1px_20px_rgba(0,0,0,0.08)]"
-          : "bg-white/80 backdrop-blur-sm"
+          ? "bg-[#0F0D0A]/95 backdrop-blur-sm shadow-[0_1px_20px_rgba(0,0,0,0.08)]"
+          : "bg-[#0F0D0A]/80 backdrop-blur-sm"
       }`}
     >
       <div className="container-md">
@@ -86,7 +86,7 @@ export default function Navbar() {
               >
                 <Link
                   href={link.href}
-                  className="flex items-center gap-1 px-3 py-2 font-body text-xs tracking-[0.12em] uppercase text-charcoal-light hover:text-gold transition-colors duration-200"
+                  className="flex items-center gap-1 px-3 py-2 font-body text-xs tracking-[0.12em] uppercase text-white hover:text-gold transition-colors duration-200"
                 >
                   {link.label}
                   {link.dropdown && (
@@ -131,7 +131,7 @@ export default function Navbar() {
 
           {/* Mobile toggle */}
           <button
-            className="lg:hidden p-2 text-charcoal"
+            className="lg:hidden p-2 text-gray-400"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >

@@ -1,14 +1,28 @@
+"use client";
+
 import type { Metadata } from "next";
-import { Phone, Mail, MapPin, Instagram, Facebook, MessageCircle } from "lucide-react";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Instagram,
+  Facebook,
+  MessageCircle,
+  Clock,
+} from "lucide-react";
 import { siteConfig } from "@/data/data";
 
-export const metadata: Metadata = {
-  title: "Contact Madhurya | Get In Touch",
-  description:
-    "Reach Madhurya via WhatsApp, phone, or email. Visit our showroom in Indore or connect with us on social media.",
-};
+// Note: In Next.js, 'metadata' should be in a separate layout or a server component.
+// If this is a 'use client' file, move metadata to a parent server file.
 
 const contactItems = [
+  {
+    icon: MessageCircle,
+    label: "WhatsApp",
+    value: "Chat with us",
+    href: siteConfig.social.whatsapp,
+    // subValue: "Fastest response (under 1hr)",
+  },
   {
     icon: Phone,
     label: "Phone",
@@ -20,12 +34,6 @@ const contactItems = [
     label: "Email",
     value: siteConfig.email,
     href: `mailto:${siteConfig.email}`,
-  },
-  {
-    icon: MapPin,
-    label: "Address",
-    value: siteConfig.address,
-    href: "#map",
   },
 ];
 
@@ -40,8 +48,8 @@ export default function ContactPage() {
             Let's <span className="italic text-gold">Connect</span>
           </h1>
           <p className="font-body text-charcoal-light mt-3 max-w-lg">
-            Whether you have a question, want to place an order, or just want to
-            say hello — we'd love to hear from you.
+            Whether you have a question, want to visit our store, or are
+            interested in collaborating — we'd love to hear from you.
           </p>
         </div>
       </section>
@@ -50,117 +58,107 @@ export default function ContactPage() {
       <section className="py-20 bg-white">
         <div className="container-md grid grid-cols-1 lg:grid-cols-2 gap-14">
           {/* Left — contact info */}
-          <div className="space-y-10">
-            {/* WhatsApp CTA */}
-            <a
-              href={siteConfig.social.whatsapp}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-5 p-7 bg-[#25D366]/10 border border-[#25D366]/30 hover:border-[#25D366] transition-colors group"
-            >
-              <div className="w-14 h-14 bg-[#25D366] flex items-center justify-center shrink-0">
-                <MessageCircle size={24} className="text-white" />
-              </div>
-              <div>
-                <p className="font-body text-xs tracking-[0.2em] uppercase text-[#128C7E] mb-1">
-                  Fastest Response
-                </p>
-                <p className="font-heading text-xl text-charcoal group-hover:text-[#128C7E] transition-colors">
-                  Chat on WhatsApp
-                </p>
-                <p className="font-body text-sm text-charcoal-light mt-1">
-                  Usually replies within 1 hour
-                </p>
-              </div>
-            </a>
+          <div className="space-y-12">
+            {/* Main Contact items */}
+            <div className="space-y-8">
+              {contactItems.map(
+                ({ icon: Icon, label, value, href }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target={label === "WhatsApp" ? "_blank" : undefined}
+                    rel={
+                      label === "WhatsApp" ? "noopener noreferrer" : undefined
+                    }
+                    className="flex items-start gap-5 group"
+                  >
+                    <div className="w-12 h-12 bg-cream border border-cream-dark flex items-center justify-center shrink-0 group-hover:bg-gold group-hover:border-gold transition-all duration-300 rounded-lg">
+                      <Icon
+                        size={20}
+                        className="text-gray-500 group-hover:text-white transition-colors"
+                      />
+                    </div>
+                    <div>
+                      <p className="font-body text-[10px] tracking-[0.2em] uppercase text-gold mb-1 font-bold">
+                        {label}
+                      </p>
+                      <p className="font-heading text-lg text-charcoal group-hover:text-gold transition-colors">
+                        {value}
+                      </p>
+                     
+                    </div>
+                  </a>
+                ),
+              )}
 
-            {/* Contact items */}
-            <div className="space-y-6">
-              {contactItems.map(({ icon: Icon, label, value, href }) => (
-                <a
-                  key={label}
-                  href={href}
-                  className="flex items-start gap-5 group"
-                >
-                  <div className="w-12 h-12 bg-cream border border-cream-dark flex items-center justify-center shrink-0 group-hover:border-gold transition-colors">
-                    <Icon size={18} className="text-gold" />
+              {/* Address Section with Timings */}
+              <div className="flex items-start gap-5 pt-4">
+                <div className="w-12 h-12 bg-cream border border-cream-dark flex items-center justify-center shrink-0 rounded-lg">
+                  <MapPin size={20} className="text-gold" />
+                </div>
+                <div>
+                  <p className="font-body text-[10px] tracking-[0.2em] uppercase text-gold mb-1 font-bold">
+                    Address
+                  </p>
+                  <p className="font-body text-sm text-charcoal-light leading-relaxed max-w-xs">
+                    {siteConfig.address}
+                  </p>
+
+                  {/* Store Timings below Address */}
+                  <div className="mt-4 flex items-center gap-2 text-charcoal-light">
+                    <Clock size={14} className="text-gold" />
+                    <span className="text-xs font-medium">
+                      10:00 AM – 8:00 PM (Mon-Sat)
+                    </span>
                   </div>
-                  <div>
-                    <p className="font-body text-xs tracking-[0.15em] uppercase text-gold mb-1">
-                      {label}
-                    </p>
-                    <p className="font-body text-sm text-charcoal-light group-hover:text-charcoal transition-colors">
-                      {value}
-                    </p>
-                  </div>
-                </a>
-              ))}
+                </div>
+              </div>
             </div>
 
-            {/* Social */}
-            <div>
-              <p className="font-body text-xs tracking-[0.2em] uppercase text-gold mb-4">
+            {/* Social - Rounded Icons */}
+            <div className="pt-6">
+              <p className="font-body text-[10px] tracking-[0.2em] uppercase text-gold mb-5 font-bold">
                 Follow Us
               </p>
-              <div className="flex gap-3">
+              <div className="flex gap-4">
                 <a
                   href={siteConfig.social.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 border border-cream-dark px-4 py-2.5 font-body text-xs tracking-wide text-charcoal-light hover:border-gold hover:text-gold transition-colors"
+                  className="w-10 h-10 rounded-full border border-cream-dark flex items-center justify-center text-charcoal-light hover:bg-gold hover:text-white hover:border-gold transition-all"
+                  aria-label="Instagram"
                 >
-                  <Instagram size={14} /> Instagram
+                  <Instagram size={18} />
                 </a>
                 <a
                   href={siteConfig.social.facebook}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 border border-cream-dark px-4 py-2.5 font-body text-xs tracking-wide text-charcoal-light hover:border-gold hover:text-gold transition-colors"
+                  className="w-10 h-10 rounded-full border border-cream-dark flex items-center justify-center text-charcoal-light hover:bg-gold hover:text-white hover:border-gold transition-all"
+                  aria-label="Facebook"
                 >
-                  <Facebook size={14} /> Facebook
+                  <Facebook size={18} />
                 </a>
               </div>
             </div>
           </div>
 
-          {/* Right — map */}
-          <div id="map" className="space-y-4">
-           <div className="w-full h-[400px] md:h-[500px] rounded-lg overflow-hidden shadow-sm">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d16443.58200806424!2d75.91923746854889!3d22.70883035463825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fd22c3cd5683%3A0x9641f0b0f483b7f7!2sMadhurya%20Handicrafts%20%26%20Artifacts%20Store!5e0!3m2!1sen!2sin!4v1777179034131!5m2!1sen!2sin" 
-        className="w-full h-full border-0"
-        loading="lazy"
-        referrerPolicy="no-referrer-when-downgrade"
-      />
-    </div>
+          {/* Right — Map */}
+          <div id="map" className="relative group">
+            <div className="w-full h-[250px] lg:h-full min-h-[400px] rounded-2xl overflow-hidden shadow-2xl border border-cream-dark">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3680.560621954935!2d75.92569527784833!3d22.707394774913496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fd22c3cd5683%3A0x9641f0b0f483b7f7!2sMadhurya%20Handicrafts%20%26%20Artifacts%20Store!5e0!3m2!1sen!2sin!4v1778253161077!5m2!1sen!2sin"
+                width="600"
+                height="450"
+                className="w-full h-full border-0  contrast-100  transition-all duration-700"
+                loading="lazy"
+              ></iframe>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Business hours */}
-      <section className="py-16 bg-cream">
-        <div className="container-md max-w-2xl">
-          <p className="section-subtitle">Showroom Timings</p>
-          <h2 className="section-title mb-8">
-            Visit <span className="italic text-gold">Us</span>
-          </h2>
-          <div className="divide-y divide-cream-dark">
-            {[
-              { day: "Monday – Friday", time: "10:00 AM – 7:00 PM" },
-              { day: "Saturday", time: "10:00 AM – 8:00 PM" },
-              { day: "Sunday", time: "11:00 AM – 6:00 PM" },
-            ].map((row) => (
-              <div
-                key={row.day}
-                className="flex justify-between py-4 font-body text-sm"
-              >
-                <span className="text-charcoal-light">{row.day}</span>
-                <span className="text-charcoal font-medium">{row.time}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Optional: Detailed Timings Section if needed */}
     </>
   );
 }

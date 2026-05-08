@@ -10,7 +10,7 @@ export const siteConfig = {
     "Premium handcrafted home décor — wall art, clocks, lamps, and bespoke pieces that transform living spaces.",
   phone: "919425057991",
   whatsapp: "919425057991",
-  email: "hello@madhurya.in",
+  email: "madhuryaartifacts@gmail.com contact.madhuryastore@gmail.com",
   address: "1, Agra - Mumbai Hwy, Bicholi Hapsi, Indore, Madhya Pradesh – 452016",
   mapEmbed:
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3330.715665711702!2d75.92799127476103!3d22.707394828017478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fd22c3cd5683%3A0x9641f0b0f483b7f7!2sMadhurya%20Handicrafts%20%26%20Artifacts%20Store!5e1!3m2!1sen!2sin!4v1777178068030!5m2!1sen!2sin",
@@ -35,7 +35,7 @@ export const categories: Category[] = [
     id: "Painting",
     name: "Painting",
     image:
-      "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=600&q=80",
+      "/images/p3.webp",
     description: "Hand-painted canvases that become conversation pieces",
     count: 12,
   },
@@ -43,39 +43,39 @@ export const categories: Category[] = [
     id: "Clocks",
     name: "Clocks",
     image:
-      "https://images.unsplash.com/photo-1563861826100-9cb868fdbe1c?w=600&q=80",
+      "/images/c1.webp",
     description: "Artisanal timepieces blending function and beauty",
     count: 8,
   },
   {
     id: "Artifacts",
-    name: "Artifacts & Décor",
+    name: "Artifacts",
     image:
-      "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=600&q=80",
+      "/images/a4.webp",
     description: "Ambient lighting that sets the perfect mood",
     count: 10,
   },
   {
     id: "Rugs",
-    name: "Rugs & Textiles",
+    name: "Rugs",
     image:
-      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=600&q=80",
+      "/images/r1.webp",
     description: "Curated accent pieces for every corner",
     count: 15,
   },
   {
     id: "Vases",
-    name: "Vases & Planters",
+    name: "Vases",
     image:
-      "https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=600&q=80",
+      "/images/v1.webp",
     description: "Sculptural vessels for botanicals and blooms",
     count: 7,
   },
   {
-    id: "Artificial Planter",
-    name: "Artificial Planter",
+    id: "Artificial Plants",
+    name: "Artificial Plants",
     image:
-      "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=600&q=80",
+      "/images/v5.webp",
     description: "Luxe cushions, throws, and woven accents",
     count: 9,
   },
@@ -85,32 +85,32 @@ export const featuredProducts = [
   {
     id: "f1",
     name: "Luxury Wall Frame",
-    image: "/images/p1.png",
+    image: "/images/p2.webp",
   },
   {
     id: "f2",
     name: "Modern Lamp",
-    image: "/images/c1.png",
+    image: "/images/c1.webp",
   },
   {
     id: "f3",
     name: "Classic Watch",
-    image: "/images/a1.png",
+    image: "/images/a1.webp",
   },
   {
     id: "f4",
     name: "Decor Statue",
-    image: "/images/img1.jpeg",
+    image: "/images/img1.webp",
   },
   {
     id: "f5",
     name: "Premium Painting",
-    image: "/images/p3.png",
+    image: "/images/p3.webp",
   },
   {
     id: "f6",
     name: "Designer Vase",
-    image: "/images/v1.png",
+    image: "/images/v4.webp",
   },
 ];
 export type Product = {
@@ -129,7 +129,7 @@ export const products: Product[] = [
     name: "Golden Horizon Canvas",
     category: "Painting",
     image:
-      "/images/p1.png",
+      "/images/p1.webp",
     tag: "Bestseller",
     material: "Acrylic on Canvas",
   },
@@ -138,7 +138,7 @@ export const products: Product[] = [
     name: "Forest Whisper Triptych",
     category: "Painting",
     image:
-       "/images/p2.png",
+       "/images/p2.webp",
     tag: "New",
     material: "Oil on Canvas",
   },
@@ -147,7 +147,7 @@ export const products: Product[] = [
     name: "Abstract Terracotta Series",
     category: "Painting",
     image:
-       "/images/p3.png",
+       "/images/p3.webp",
     material: "Mixed Media",
   },
   {
@@ -155,7 +155,7 @@ export const products: Product[] = [
     name: "Moonlit Botanicals",
     category: "Painting",
     image:
-       "/images/p4.png",
+       "/images/p4.webp",
     tag: "Limited",
     material: "Watercolour on Paper",
   },
@@ -164,7 +164,7 @@ export const products: Product[] = [
     name: "Marble Wash Study",
     category: "Painting",
     image:
-       "/images/p5.png",
+       "/images/p5.webp",
     material: "Acrylic on Canvas",
   },
   {
@@ -220,7 +220,7 @@ export const products: Product[] = [
     name: "Rattan Pendant Lamp",
     category: "Artifacts",
     image:
-      "/images/a1.png",
+      "/images/a1.webp",
     tag: "Bestseller",
     material: "Natural Rattan",
   },
@@ -229,7 +229,7 @@ export const products: Product[] = [
     name: "Brass Arc Floor Lamp",
     category: "Artifacts",
     image:
-      "/images/a2.png",
+      "/images/a2.webp",
     tag: "New",
     material: "Brushed Brass & Marble",
   },
@@ -238,7 +238,7 @@ export const products: Product[] = [
     name: "Terracotta Table Lamp",
     category: "Artifacts",
     image:
-      "/images/v4.png",
+      "/images/v4.webp",
     material: "Hand-thrown Terracotta",
   },
   {
@@ -246,7 +246,7 @@ export const products: Product[] = [
     name: "Bamboo Lantern Set",
     category: "Artifacts",
     image:
-      "/images/a4.png",
+      "/images/a4.webp",
     tag: "Limited",
     material: "Handwoven Bamboo",
   },
@@ -311,7 +311,7 @@ export const products: Product[] = [
     name: "Matte Black Stoneware Vase",
     category: "Vases",
     image:
-      "/images/v1.png",
+      "/images/v1.webp",
     tag: "Bestseller",
     material: "Stoneware",
   },
@@ -320,7 +320,7 @@ export const products: Product[] = [
     name: "Speckled Cream Planter",
     category: "Vases",
     image:
-      "/images/v2.png",
+      "/images/v2.webp",
     material: "Hand-thrown Ceramic",
   },
   {
@@ -328,7 +328,7 @@ export const products: Product[] = [
     name: "Ribbed Terracotta Trio",
     category: "Vases",
     image:
-      "/images/v3.png",
+      "/images/v3.webp",
     tag: "New",
     material: "Terracotta",
   },
