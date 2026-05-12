@@ -6,6 +6,7 @@ import AboutPreview from "@/components/sections/AboutPreview";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import CTABanner from "@/components/sections/CTABanner";
 import BlogPreview from "@/components/sections/BlogPreview";
+import ClientWrapper from "@/components/ClientWrapper";
 
 export const metadata: Metadata = {
   title: "Madhurya | Premium Handcrafted Home Décor",
@@ -16,13 +17,15 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
-      <HeroSection />
-      <CategoriesSection />
-      <FeaturedProducts />
-      <AboutPreview />
-      <TestimonialsSection />
-      <BlogPreview />
-      <CTABanner />
+    
+        <HeroSection />
+        <CategoriesSection />
+        <FeaturedProducts />
+        <AboutPreview />
+        <TestimonialsSection />
+        <BlogPreview />
+        <CTABanner />
+      
     </>
   );
 }

@@ -1,10 +1,10 @@
-
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Jost } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import WhatsAppFloat from "@/components/ui/WhatsAppFloat";
+import ClientWrapper from "@/components/ClientWrapper";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -54,10 +54,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${cormorant.variable} ${jost.variable}`}>
       <body className="bg-cream text-charcoal antialiased">
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
-        <WhatsAppFloat />
+        <ClientWrapper>
+          <Navbar />
+          {children}
+          <Footer />
+          <WhatsAppFloat />
+        </ClientWrapper>
       </body>
     </html>
   );

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { Menu, X, ChevronDown, MessageCircle } from "lucide-react";
@@ -26,6 +27,7 @@ const navLinks = [
 ];
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -75,45 +77,54 @@ export default function Navbar() {
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-1">
-            {navLinks.map((link) => (
-              <div
-                key={link.label}
-                className="relative"
-                onMouseEnter={() =>
-                  link.dropdown && setOpenDropdown(link.label)
-                }
-                onMouseLeave={() => setOpenDropdown(null)}
-              >
-                <Link
-                  href={link.href}
-                  className="flex items-center gap-1 px-3 py-2 font-body text-xs tracking-[0.12em] uppercase text-white hover:text-gold transition-colors duration-200"
-                >
-                  {link.label}
-                  {link.dropdown && (
-                    <ChevronDown
-                      size={12}
-                      className={`transition-transform duration-200 ${
-                        openDropdown === link.label ? "rotate-180" : ""
-                      }`}
-                    />
-                  )}
-                </Link>
+            {navLinks.map((link) => {
+              // Check if current path matches link href
+              const isActive = pathname === link.href;
 
-                {link.dropdown && openDropdown === link.label && (
-                  <div className="absolute top-full left-0 mt-0 w-52 bg-white shadow-xl border-t-2 border-gold py-2 z-50">
-                    {link.dropdown.map((item) => (
-                      <Link
-                        key={item.label}
-                        href={item.href}
-                        className="block px-5 py-2.5 font-body text-xs tracking-wide text-charcoal-light hover:text-gold hover:bg-cream transition-colors"
-                      >
-                        {item.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
+              return (
+                <div
+                  key={link.label}
+                  className="relative"
+                  onMouseEnter={() =>
+                    link.dropdown && setOpenDropdown(link.label)
+                  }
+                  onMouseLeave={() => setOpenDropdown(null)}
+                >
+                  <Link
+                    href={link.href}
+                    className={`flex items-center gap-1 px-3 py-2 font-body text-xs tracking-[0.12em] uppercase transition-colors duration-200 ${
+                      isActive
+                        ? "text-gold font-bold"
+                        : "text-white hover:text-gold"
+                    }`}
+                  >
+                    {link.label}
+                    {link.dropdown && (
+                      <ChevronDown
+                        size={12}
+                        className={`transition-transform duration-200 ${
+                          openDropdown === link.label ? "rotate-180" : ""
+                        }`}
+                      />
+                    )}
+                  </Link>
+                  {link.dropdown && openDropdown === link.label && (
+                    <div className="absolute top-full left-0 mt-0 w-52 bg-white shadow-xl border-t-2 border-gold py-2 z-50">
+                      {link.dropdown.map((item) => (
+                        <Link
+                          key={item.label}
+                          href={item.href}
+                          className="block px-5 py-2.5 font-body text-xs tracking-wide text-charcoal-light hover:text-gold hover:bg-cream transition-colors"
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                  {/* ... dropdown logic stays the same */}
+                </div>
+              );
+            })}
           </nav>
 
           {/* CTA */}

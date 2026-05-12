@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, MessageCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react"; // useRef add kiya
 
 const slides = [
   { heading: "Designed To", sub: "Elevate Your Space" },
@@ -12,12 +12,11 @@ const slides = [
   { heading: "Your Home.", sub: "Our Finest Work." },
 ];
 
-// Smoothness logic: Lines will appear one by one
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { staggerChildren: 0.15 } // Staggered arrival for smoothness
+    transition: { staggerChildren: 0.15 }
   },
 };
 
@@ -32,7 +31,22 @@ const itemVariants = {
 
 export default function HeroSection() {
   const [current, setCurrent] = useState(0);
+  const videoRef = useRef<HTMLVideoElement>(null); // Ref yahan define hogi
 
+  // VIDEO SYNC LOGIC: Loader ke khatam hone ke baad play hoga
+  useEffect(() => {
+    // Agar aapka loader total 4.4 seconds leta hai
+    const videoTimer = setTimeout(() => {
+      if (videoRef.current) {
+        videoRef.current.currentTime = 0; // Shuruat se start karein
+        videoRef.current.play().catch(err => console.log("Video play blocked:", err));
+      }
+    }, 4400); // Loader ke timing se match karein
+
+    return () => clearTimeout(videoTimer);
+  }, []);
+
+  // SLIDE CHANGE LOGIC
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % slides.length);
@@ -46,11 +60,12 @@ export default function HeroSection() {
       {/* ── MOBILE & TABLET: Video background ── */}
       <div className="absolute inset-0 block lg:hidden">
         <video
-          autoPlay
+          ref={videoRef}      // Ref assign kiya
           muted
           loop
           playsInline
-          preload="auto" // Instant play fix
+          preload="auto"
+          // autoPlay hatana zaroori hai warna timer kaam nahi karega
           className="w-full h-full object-cover"
         >
           <source src="/video/hero.mp4" type="video/mp4" />
@@ -74,7 +89,7 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/20 to-transparent" />
       </div>
 
-      {/* ── Content ── */}
+      {/* Content */}
       <div className="relative z-10 px-6 md:px-12 max-w-6xl mx-auto w-full">
         <motion.div 
           variants={containerVariants}
@@ -82,12 +97,10 @@ export default function HeroSection() {
           animate="visible"
           className="max-w-2xl"
         >
-          {/* Label */}
           <motion.p variants={itemVariants} className="text-gold-light tracking-[0.3em] text-[10px] sm:text-xs uppercase mb-5">
             Luxury Home Decor
           </motion.p>
 
-          {/* Animated Heading */}
           <motion.div variants={itemVariants} className="mb-6 min-h-[120px] sm:min-h-[140px] md:min-h-[160px] lg:min-h-[180px]">
             <AnimatePresence mode="wait" initial={false}>
               <motion.div
@@ -107,13 +120,11 @@ export default function HeroSection() {
             </AnimatePresence>
           </motion.div>
 
-          {/* Subtext */}
           <motion.p variants={itemVariants} className="text-white/75 text-xs sm:text-sm max-w-sm sm:max-w-md mb-8 leading-relaxed">
             Discover timeless décor pieces crafted with precision, elegance, and
             a story that transforms your home into art.
           </motion.p>
 
-          {/* Buttons */}
           <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-3">
             <Link
               href="/products"
@@ -131,7 +142,6 @@ export default function HeroSection() {
             </a>
           </motion.div>
 
-          {/* Slide dots */}
           <motion.div variants={itemVariants} className="flex gap-2 mt-8">
             {slides.map((_, i) => (
               <button
@@ -147,7 +157,6 @@ export default function HeroSection() {
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

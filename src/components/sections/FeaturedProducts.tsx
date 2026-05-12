@@ -56,7 +56,7 @@ export default function FeaturedProducts() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-5 md:p-10">
                   <div className="flex w-full items-center justify-between gap-4">
                     <div className="text-white">
-                      <h3 className="text-xs md:text-xl font-serif tracking-wide drop-shadow-md">
+                      <h3 className="text-xs md:text-xl text-gray-300 font-serif tracking-wide drop-shadow-md">
                         {product.name}
                       </h3>
                     </div>
