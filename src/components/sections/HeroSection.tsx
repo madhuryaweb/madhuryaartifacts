@@ -31,17 +31,16 @@ const itemVariants = {
 
 export default function HeroSection() {
   const [current, setCurrent] = useState(0);
-  const videoRef = useRef<HTMLVideoElement>(null); // Ref yahan define hogi
+  const videoRef = useRef<HTMLVideoElement>(null); 
 
-  // VIDEO SYNC LOGIC: Loader ke khatam hone ke baad play hoga
   useEffect(() => {
-    // Agar aapka loader total 4.4 seconds leta hai
+    
     const videoTimer = setTimeout(() => {
       if (videoRef.current) {
-        videoRef.current.currentTime = 0; // Shuruat se start karein
+        videoRef.current.currentTime = 0;
         videoRef.current.play().catch(err => console.log("Video play blocked:", err));
       }
-    }, 4400); // Loader ke timing se match karein
+    }, 4400); 
 
     return () => clearTimeout(videoTimer);
   }, []);
@@ -78,7 +77,7 @@ export default function HeroSection() {
       {/* ── DESKTOP: Static image background ── */}
       <div className="absolute inset-0 hidden lg:block">
         <Image
-          src="/images/img-5.webp"
+          src="/images/hero.webp"
           alt="Madhurya luxury home decor"
           fill
           priority

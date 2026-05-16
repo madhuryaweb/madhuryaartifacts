@@ -3,6 +3,7 @@ import { Cormorant_Garamond, Jost } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import localFont from "next/font/local";
 import WhatsAppFloat from "@/components/ui/WhatsAppFloat";
 import ClientWrapper from "@/components/ClientWrapper";
 
@@ -18,6 +19,11 @@ const jost = Jost({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600"],
   variable: "--font-jost",
+  display: "swap",
+});
+const andasia = localFont({
+  src: "./fonts/Andasia.ttf", 
+  variable: "--font-andasia",  
   display: "swap",
 });
 
@@ -52,7 +58,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${jost.variable}`}>
+    <html lang="en" className={`${cormorant.variable} ${jost.variable} ${andasia.variable}` }>
       <body className="bg-cream text-charcoal antialiased">
         <ClientWrapper>
           <Navbar />

@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         // Linked to your CSS variables for Cormorant Garamond & Jost
+       andasia: ['Andasia', 'serif'],
         heading: ["var(--font-cormorant)", "serif"],
         body: ["var(--font-jost)", "sans-serif"],
       },

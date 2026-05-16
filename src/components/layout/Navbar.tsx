@@ -69,7 +69,7 @@ export default function Navbar() {
                 src="/images/logo4.png"
                 alt="Madhurya Logo"
                 fill
-                className="object-contain " // 'scale' se logo bada hoga bina box bada kiye
+                className="object-contain " 
                 priority
               />
             </div>
@@ -128,7 +128,7 @@ export default function Navbar() {
           </nav>
 
           {/* CTA */}
-          <div className="hidden lg:flex items-center gap-3">
+          {/* <div className="hidden lg:flex items-center gap-3">
             <a
               href={`https://wa.me/${siteConfig.social.whatsapp.replace("https://wa.me/", "")}`}
               target="_blank"
@@ -138,7 +138,7 @@ export default function Navbar() {
               <MessageCircle size={14} />
               Enquire Now
             </a>
-          </div>
+          </div> */}
 
           {/* Mobile toggle */}
           <button
@@ -180,7 +180,7 @@ export default function Navbar() {
                 )}
               </div>
             ))}
-            <div className="pt-4">
+            {/* <div className="pt-4">
               <a
                 href={siteConfig.social.whatsapp}
                 target="_blank"
@@ -190,7 +190,7 @@ export default function Navbar() {
                 <MessageCircle size={14} />
                 Enquire on WhatsApp
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       )}
