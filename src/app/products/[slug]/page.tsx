@@ -42,7 +42,7 @@ export default function ProductDetailPage({ params }: Props) {
     notFound();
   }
 
-  const productUrl = `https://madhurya.in/products/${product.slug}`;
+  const productUrl = `https://madhuryaartifacts.in/products/${product.slug}`;
 
   const waMessage = encodeURIComponent(
     `Hi Madhurya! I'm interested in "${product.name}"\n` +

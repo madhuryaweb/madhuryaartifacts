@@ -17,7 +17,7 @@ const tagStyles: Record<string, string> = {
 
 export default function ProductCard({ product }: ProductCardProps) {
   // 1. Pehle dynamic product URL banaya text preview ke liye
-  const productUrl = `https://madhurya.in/products/${product.slug}`;
+  const productUrl = `https://madhuryaartifacts.in/products/${product.slug}`;
 
 
   const waMessage = encodeURIComponent(
